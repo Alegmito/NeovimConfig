@@ -9,12 +9,7 @@ return {
         local treesitter = require("nvim-treesitter.configs")
 
         treesitter.setup({
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
-            indent = { enable = true },
-            autotag = {
+           autotag = {
                 enable = true,
             },
             ensure_installed = {
@@ -35,7 +30,6 @@ return {
                 "c",
                 "rust",
             },
-            
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,

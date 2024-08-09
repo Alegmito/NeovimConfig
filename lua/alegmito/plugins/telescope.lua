@@ -23,5 +23,7 @@ return {
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end)
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+
+        require('telescope').load_extension('gdscript_extended')
     end
 }
