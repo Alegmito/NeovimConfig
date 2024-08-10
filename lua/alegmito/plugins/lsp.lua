@@ -28,8 +28,12 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
+                "omnisharp",
+                "clangd",
+                "cmake",
                 "gopls",
             },
+            on_attach = on_attach,
             handlers = {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup {

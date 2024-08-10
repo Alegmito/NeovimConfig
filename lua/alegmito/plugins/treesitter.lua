@@ -29,6 +29,7 @@ return {
                 "gitignore",
                 "c",
                 "rust",
+                "cmake",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
