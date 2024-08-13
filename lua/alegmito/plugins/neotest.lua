@@ -16,7 +16,7 @@ return {
             neotest.setup({
                 adapters = {
                     require("neotest-vitest"),
-                    require("neotest-gtest"),
+                    require("neotest-gtest").setup({}),
                     require("neotest-dotnet"),
                     --require("neotest-python"),
                     require("neotest-plenary").setup({
