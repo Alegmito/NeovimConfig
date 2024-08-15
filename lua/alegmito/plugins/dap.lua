@@ -9,15 +9,37 @@ return {
         "jay-babu/mason-nvim-dap.nvim"
     },
     config = function()
+
+        require("mason-nvim-dap").setup({
+            ensure_installed = { "python", "cppdbg" }
+        })
         local dap = require "dap"
         local ui = require "dapui"
 
         require("dapui").setup()
         require("dap-go").setup()
-        require("mason-nvim-dap").setup({
-            ensure_installed = { "python", "cppdbg" }
-        })
-        dap.configurations.cpp = {
+        dap.adapters.godot = {
+            type = "server",
+            host = '127.0.0.1',
+            port = 6006,
+        }
+        dap.configurations.gdscript = {
+            {
+                type = "godot",
+                request = "launch",
+                name = "Launch scene",
+                project = "${workspaceFolder}",
+            }
+        }
+--[[idap.adapters.cppdbg = {
+            id = 'cppdbg',
+            type = 'executable',
+            command = 'C:\\Users\\Alegmito\\.vscode\\extensions\\ms-vscode.cpptools-1.21.6-win32-x64\\debugAdapters\\bin\\OpenDebugAD7.exe',
+            options = {
+                detached = false
+            }
+        }]]--
+       dap.configurations.cpp = {
             {
                 name = "Launch file",
                 type = "cppdbg",
@@ -44,6 +66,7 @@ return {
 
         dap.configurations.c = dap.configurations.cpp
         dap.configurations.rust = dap.configurations.cpp
+
         require("nvim-dap-virtual-text").setup {
             -- This just tries to mitigate the chance that I leak tokens here. Probably won't stop it from happening...
             display_callback = function(variable)
