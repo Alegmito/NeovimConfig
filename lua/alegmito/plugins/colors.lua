@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "github_light"
+	color = color or "cyberdream"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -9,7 +9,18 @@ end
 
 return {
     -- Install without configuration
-
+    {
+        "scottmckendry/cyberdream.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("cyberdream").setup({
+                -- Enable transparent background
+                transparent = true,
+            })
+          -- vim.cmd('colorscheme github_dark')
+        end,
+    },
     {
         'projekt0n/github-nvim-theme',
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -21,7 +32,7 @@ return {
                 }
             })
 
-            vim.cmd('colorscheme github_dark')
+          -- vim.cmd('colorscheme github_dark')
         end,
     },
     {
@@ -39,8 +50,8 @@ return {
                     comments = { italic = false },
                     keywords = { italic = false },
                     -- Background styles. Can be "dark", "transparent" or "normal"
-                    sidebars = "transparent", -- style for sidebars, see below
-                    floats = "transparent", -- style for floating windows
+                    --sidebars = "transparent", -- style for sidebars, see below
+                    --floats = "transparent", -- style for floating windows
                     day_brightness = 1, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
                     dim_inactive = false, -- dims inactive windows
                     lualine_bold = true, -- When `true`, section headers in the lualine theme will be boldv
@@ -52,6 +63,7 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
+        lazy = false,
         config = function()
             require('rose-pine').setup({
                 disable_background = true,
@@ -59,7 +71,7 @@ return {
                     -- Style to be applied to different syntax groups
                     -- Value is any valid attr-list value for `:help nvim_set_hl`
                     italic = false,
-                    transparency = true,
+                    --transparency = true,
                 }
                 })
 

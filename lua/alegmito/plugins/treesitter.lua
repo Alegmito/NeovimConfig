@@ -55,7 +55,7 @@ return {
                     },
             })
 
-    require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
+    require 'nvim-treesitter.install'.compilers = { "clang", "cl", "gcc" }
     local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
         treesitter_parser_config.templ = {
             install_info = {
