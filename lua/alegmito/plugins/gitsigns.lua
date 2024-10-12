@@ -1,8 +1,7 @@
 return {
     "lewis6991/gitsigns.nvim",
-    lazy = false,
     config = function()
-        require('gitsigns').setup() {
+        require('gitsigns').setup({
             signs = {
                 add          = { text = '┃' },
                 change       = { text = '┃' },
@@ -50,6 +49,6 @@ return {
                 row = 0,
                 col = 1
             },
-        }
+        })
     end
 }
