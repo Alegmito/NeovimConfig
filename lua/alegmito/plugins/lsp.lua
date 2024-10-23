@@ -32,6 +32,7 @@ return {
                 "clangd",
                 "cmake",
                 "gopls",
+                "pyright",
             },
             on_attach = on_attach,
             handlers = {
