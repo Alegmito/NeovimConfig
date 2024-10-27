@@ -3,6 +3,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -73,6 +74,18 @@ return {
                 end,
             }
         })
+
+        
+        local mason_tool_installer = require("mason-tool-installer")
+        mason_tool_installer.setup({
+            ensure_installed = {
+                "clang-format",
+                "gdtoolkit",
+                "csharpier",
+                "prettier"
+            },
+        })
+        
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
