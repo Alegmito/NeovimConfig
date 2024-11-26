@@ -28,6 +28,7 @@ return {
                     "dockerfile",
                     "gitignore",
                     "c",
+                    "cpp",
                     "rust",
                     "cmake",
                     },
