@@ -29,7 +29,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
-                "csharp_ls",
+                "omnisharp-mono",
                 "clangd",
                 "cmake",
                 "gopls",
