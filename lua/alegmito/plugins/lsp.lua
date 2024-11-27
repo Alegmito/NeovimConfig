@@ -34,6 +34,7 @@ return {
                 "cmake",
                 "gopls",
                 "pyright",
+                "html"
             },
             on_attach = on_attach,
             handlers = {
