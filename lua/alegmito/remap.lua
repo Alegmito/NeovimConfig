@@ -35,4 +35,13 @@ vim.keymap.set(
 	{"n", "x"},
 	"<leader>rr",
 	function() require('telescope').extensions.refactoring.refactors() end
-)
+) 
+
+
+function insert_symbol()
+    local symbol = vim.fn.input("Enter symbol: ")
+    vim.api.nvim_feedkeys('i' .. symbol .. vim.api.nvim_replace_termcodes("<Esc>", true, false, true), 'n', true)
+end
+
+vim.keymap.set("n", "<leader>i", insert_symbol)
+
