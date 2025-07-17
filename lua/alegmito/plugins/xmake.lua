@@ -4,4 +4,5 @@ return {
     lazy = true,
     event = "BufReadPost",
     config = true,
+    enabled = false
 }
