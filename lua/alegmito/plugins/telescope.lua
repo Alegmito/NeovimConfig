@@ -24,6 +24,6 @@ return {
         end)
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
-        require('telescope').load_extension('gdscript_extended')
+        -- require('telescope').load_extension('gdscript_extended')
     end
 }
