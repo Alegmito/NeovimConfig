@@ -22,6 +22,14 @@ autocmd('LspAttach', {
     end
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "netrw",
+  callback = function()
+    vim.opt_local.relativenumber = true
+    vim.opt_local.number = false  -- Disable absolute numbers if desired
+  end,
+})
+
 --vim.g.netrw_browse_split = 0
 --vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
